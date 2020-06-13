@@ -1,0 +1,16 @@
+This dataset is created for reference by downloading dataset from google and convert itinto classification problem.
+
+First insert name in google search engine and you get lots of images. press ctrl+shift+j (for windows user) and you will be directed to page where you need to paste 
+following : urls=Array.from(document.querySelectorAll('.rg_i')).map(el=> el.hasAttribute('data-src')?el.getAttribute('data-src'):el.getAttribute('data-iurl'));
+window.open('data:text/csv;charset=utf-8,' + escape(urls.join('\n'))); 
+Press enter and all the image urls will be downloaded. you can use them as csv files. do this for all the classes you want to work for classification.
+
+Create folder name beer and create subdirectories by categories downloaded. Upload urls in respective sub directories.
+
+There is special function in fast.ai to download images from urls directly by giving source and destination path.
+download_images(path/file, dest, max_pics=200). Here first argument is path of urls csv and sec argument is destination where downloaded images to be saved.
+
+this is performed for all categories.
+
+Now we can go ahead to create databrunch and see data.
+Next will be training .
