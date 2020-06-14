@@ -63,3 +63,10 @@ img_visual.plot_confusion_matrix()
 #      )
 
 # learn_cln = cnn_learner(db, models.resnet50, metrics=error_rate)
+
+# save model file to put in production
+learn.export() # this will create pickel file in same path as export.pkl.
+
+#Now to check model perfromance
+learn = load_learner(path)
+pred_class,pred_idx,outputs = learn.predict(img) # for any dummy image we can check its class
